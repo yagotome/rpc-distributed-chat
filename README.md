@@ -18,13 +18,13 @@ $ export CLASSPATH=target/rmi-group-chat-1.0-SNAPSHOT.jar
 ```
 3. Startar rmiregistry:
 ```
-$ rmiregistry & 
+$ rmiregistry &
 ```
 4. Rodar servidor:
 ```
-$ java rmigroupchat.rmi.HelloServer
+$ java rmigroupchat.rmi.MessageServer
 ```
-5. Rodar o cliente (em outro terminal, lembrar de setar classpath):
+5. Rodar o cliente (em outro terminal, lembrar de setar o classpath):
 ```
-$ java rmigroupchat.rmi.HelloClient
+$ java rmigroupchat.rmi.MessageClient
 ```
