@@ -3,7 +3,7 @@ package rmigroupchat.rmi;
 import java.rmi.Naming;
 
 import rmigroupchat.helpers.ConfigHelper;
-import rmigroupchat.helpers.model.Config;
+import rmigroupchat.model.Config;
 
 /**
  * Server for RMI message exchanges

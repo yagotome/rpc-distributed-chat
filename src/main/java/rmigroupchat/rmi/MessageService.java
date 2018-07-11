@@ -1,7 +1,9 @@
 package rmigroupchat.rmi;
 
+import java.io.IOException;
 import java.rmi.Remote;
-import java.rmi.RemoteException;
+
+import rmigroupchat.model.Message;
 
 /**
  * Interface for message exchanges by RMI
@@ -9,5 +11,5 @@ import java.rmi.RemoteException;
  *
  */
 public interface MessageService extends Remote {
-    public void send(String message) throws RemoteException;
+    public void send(Message message) throws IOException ;
 }

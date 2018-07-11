@@ -7,7 +7,7 @@ import com.google.gson.Gson;
 import com.google.gson.JsonIOException;
 import com.google.gson.JsonSyntaxException;
 
-import rmigroupchat.helpers.model.Config;
+import rmigroupchat.model.Config;
 
 public class ConfigHelper {
 	private static final String CONFIG_URI = "config.json";
