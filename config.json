@@ -1,5 +1,6 @@
 {
     "rmiRegistryHost": "localhost",
+    "rmiRegistryPort": 9925,
     "multicastAddress": "230.0.0.25",
     "socketPort": 9825
 }

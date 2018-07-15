@@ -16,9 +16,9 @@ $ mvn clean install
 ```
 $ export CLASSPATH=target/rmi-group-chat-1.0-SNAPSHOT.jar
 ```
-3. Startar rmiregistry:
+3. Startar rmiregistry (9925 é a porta que está no arquivo config.json):
 ```
-$ rmiregistry &
+$ rmiregistry 9925 &
 ```
 4. Rodar servidor:
 ```

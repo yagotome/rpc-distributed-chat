@@ -2,11 +2,20 @@ package rmigroupchat.model;
 
 public class Config {
 	private String rmiRegistryHost;
+	private int rmiRegistryPort;
 	private String multicastAddress;
 	private int socketPort;
 		
 	public int getSocketPort() {
 		return socketPort;
+	}
+
+	public int getRmiRegistryPort() {
+		return rmiRegistryPort;
+	}
+
+	public void setRmiRegistryPort(int rmiRegistryPort) {
+		this.rmiRegistryPort = rmiRegistryPort;
 	}
 
 	public void setSocketPort(int socketPort) {

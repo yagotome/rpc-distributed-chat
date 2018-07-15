@@ -3,6 +3,7 @@ package rmigroupchat.rmi;
 import java.rmi.Naming;
 
 import rmigroupchat.helpers.ConfigHelper;
+import rmigroupchat.helpers.RmiNamingUtils;
 import rmigroupchat.model.Config;
 
 /**
@@ -15,9 +16,7 @@ public class MessageServer {
     public static void main(String args[]) {
         try {
             MessageService messageService = new MessageServiceImpl();
-            Config config = ConfigHelper.getConfig();
-            String rmiregistryHost = String.format("rmi://%s/Message", config.getRmiRegistryHost());
-			Naming.rebind(rmiregistryHost , messageService);
+			Naming.rebind(RmiNamingUtils.getMessageServiceName(), messageService);
             System.out.println("MessageService bound into rmiregistry");
         } catch (Exception ex) {
             System.err.println("Error: " + ex.getMessage());
