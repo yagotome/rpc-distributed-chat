@@ -1,10 +1,13 @@
 package rmigroupchat.rmi;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.net.MalformedURLException;
 import java.rmi.Naming;
+import java.rmi.NotBoundException;
+import java.rmi.RemoteException;
 
-import rmigroupchat.helpers.ConfigHelper;
 import rmigroupchat.helpers.RmiNamingUtils;
-import rmigroupchat.model.Config;
 import rmigroupchat.model.Message;
 
 /**
@@ -13,16 +16,13 @@ import rmigroupchat.model.Message;
  *
  */
 public class MessageClient {
-	static MessageService messageService = null;
+	private MessageService messageService;
 
-	public static void main(String args[]) {
-		try {
-			messageService = (MessageService) Naming.lookup(RmiNamingUtils.getMessageServiceName());
-			messageService.send(new Message("Yago", "Hello guys"));
-			System.out.println("Sent message to RMI server successfully");
-		} catch (Exception e) {
-			System.err.println("Error: " + e.getMessage());
-			e.printStackTrace();
-		}
+	public MessageClient() throws NotBoundException, MalformedURLException, RemoteException, FileNotFoundException {
+		messageService = (MessageService) Naming.lookup(RmiNamingUtils.getMessageServiceName());
+	}
+	
+	public void send(Message message) throws IOException {
+		messageService.send(message);
 	}
 }

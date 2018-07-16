@@ -18,7 +18,6 @@ public class SocketClient {
 		try (MulticastSocket socketClient = new MulticastSocket()) {
 			byte[] buffer = SerializationUtils.serialize(message);
 			InetAddress address = InetAddress.getByName(config.getMulticastAddress());
-//			socketClient.joinGroup(address);
 			socketClient.send(new DatagramPacket(buffer, buffer.length, address, config.getSocketPort()));
 		}
 	}

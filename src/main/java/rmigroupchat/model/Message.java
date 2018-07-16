@@ -25,7 +25,10 @@ public class Message implements Serializable {
 	}
 
 	public String getFormattedMessage() {
-		return String.format("%s: (%s)\n%s", sender, title, message);
+		if  (sender == null)
+			return message;
+		String _title = title != null ? "(" + title + ")" : "";
+		return String.format("%s: %s\n%s", sender, _title, message);
 	}
 
 	public String getSender() {
