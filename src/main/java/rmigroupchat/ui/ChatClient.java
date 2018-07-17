@@ -5,9 +5,11 @@ import java.rmi.NotBoundException;
 import java.util.Scanner;
 import rmigroupchat.model.Message;
 import rmigroupchat.rmi.MessageClient;
+import rmigroupchat.socket.SocketClient;
+import rmigroupchat.socket.SocketServer;
 
 public class ChatClient {
-	private static final String WELCOMING_MESSAGE = "Ol·! Bem vindo ao groupchat!\nDigite seu username para entrar no chat:";
+	private static final String WELCOMING_MESSAGE = "Ol√°! Bem vindo ao groupchat!\nDigite seu username para entrar no chat:";
 	private static final String USER_JOIN_MESSAGE = "*** %s entrou na conversa ***";
 	private static final String USER_LEAVE_MESSAGE = "*** %s saiu da conversa ***";
 	private static final String SENDING_ERROR_MESSAGE = "*** Erro ao tentar enviar mensagem ***";
