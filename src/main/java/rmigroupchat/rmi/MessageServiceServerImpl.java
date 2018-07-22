@@ -13,15 +13,15 @@ import rmigroupchat.socket.SocketClient;
  * @author yagotome
  *
  */
-public class MessageServiceImpl extends UnicastRemoteObject implements MessageService {
+public class MessageServiceServerImpl extends UnicastRemoteObject implements MessageService {
 	private static final long serialVersionUID = 6017125996997698789L;
 
-	public MessageServiceImpl() throws RemoteException {
+	public MessageServiceServerImpl() throws RemoteException {
 		super();
 	}
 
 	public void send(Message message) throws IOException {
 		SocketClient.spreadMessage(message);
-		System.out.println(message.getFormattedMessage());
+		System.out.println("Spreading message: " + message.getFormattedMessage());
 	}
 }
