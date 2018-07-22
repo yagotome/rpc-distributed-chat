@@ -21,7 +21,8 @@ public class RmiMultiClientHelper {
 			try {
 				messageClient.add(new RmiClientHelper(serverName));
 			} catch (MalformedURLException | RemoteException | FileNotFoundException | NotBoundException e) {
-				// TODO Auto-generated catch block
+				System.out.println("Erro ao bindar server \"" + serverName + '"');
+				System.err.println("Erro: " + e.getMessage());
 				e.printStackTrace();
 			}
 		}
@@ -32,7 +33,8 @@ public class RmiMultiClientHelper {
 			try {
 				msgClient.send(message);
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
+				System.out.println(String.format("Erro ao enviar mensagem `%s` ao server %s", message.getFormattedMessage(), msgClient.getServerName()));
+				System.err.println("Erro: " + e.getMessage());
 				e.printStackTrace();
 			}
 		});

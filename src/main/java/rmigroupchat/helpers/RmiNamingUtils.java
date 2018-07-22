@@ -12,6 +12,6 @@ public class RmiNamingUtils {
 	public static String getMessageServiceName(String id) throws FileNotFoundException {
 		Config config = ConfigHelper.getConfig();
 		id = id != null && !id.isEmpty() ? "Client_" + id : "Server";
-		return String.format("rmi://%s:%d/Message%s", config.getRmiRegistryHost(), config.getRmiRegistryPort(), id);
+		return String.format("//%s:%d/Message%s", config.getRmiRegistryHost(), config.getRmiRegistryPort(), id);
 	}
 }
