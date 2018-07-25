@@ -33,7 +33,7 @@ public class RmiMultiClientHelper {
 			try {
 				msgClient.send(message);
 			} catch (IOException e) {
-				System.out.println(String.format("Erro ao enviar mensagem `%s` ao server %s", message.getFormattedMessage(), msgClient.getServerName()));
+				System.out.println(String.format("Erro ao enviar mensagem `%s` ao server %s", message.toString(), msgClient.getServerName()));
 				System.err.println("Erro: " + e.getMessage());
 				e.printStackTrace();
 			}

@@ -28,7 +28,7 @@ public class MessageServer {
 				try {
 					sendMessageToClients(message);
 				} catch (RemoteException | MalformedURLException | FileNotFoundException e) {
-					System.out.println("Não possível enviar a mensagem: `" + message.getFormattedMessage() + "`");
+					System.out.println("Não possível enviar a mensagem: `" + message.toString() + "`");
 					System.err.println("Error: " + e.getMessage());
 					e.printStackTrace();
 				}

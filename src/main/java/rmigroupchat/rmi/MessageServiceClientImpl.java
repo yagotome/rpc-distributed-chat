@@ -21,6 +21,6 @@ public class MessageServiceClientImpl extends UnicastRemoteObject implements Mes
 	}
 
 	public void send(Message message) throws IOException {
-		ChatClient.println(message.getFormattedMessage());
+		ChatClient.println(message.toString());
 	}
 }

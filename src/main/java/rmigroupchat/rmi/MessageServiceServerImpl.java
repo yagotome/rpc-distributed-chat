@@ -22,6 +22,6 @@ public class MessageServiceServerImpl extends UnicastRemoteObject implements Mes
 
 	public void send(Message message) throws IOException {
 		SocketClient.spreadMessage(message);
-		System.out.println("Spreading message: `" + message.getFormattedMessage() + "`");
+		System.out.println("Spreading message: `" + message.toString() + "`");
 	}
 }
