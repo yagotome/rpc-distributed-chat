@@ -40,7 +40,7 @@ public class Message implements Serializable {
 		if (sender == null)
 			return message;
 		String _title = title != null ? "(" + title + ")" : "";
-		return String.format("[%s] %s: (%s)\n%s", getFormattedCreatedTime(), sender, _title, message);
+		return String.format("[%s] %s: %s\n%s", getFormattedCreatedTime(), sender, _title, message);
 	}
 
 	private String getFormattedCreatedTime() {

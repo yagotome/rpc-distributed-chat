@@ -14,7 +14,7 @@ import rmigroupchat.rmi.MessageService;
 import rmigroupchat.rmi.MessageServiceClientImpl;
 
 public class ChatClient {
-	private static final String WELCOMING_MESSAGE = "Ol·! Bem vindo ao groupchat!\nDigite seu username para entrar no chat: ";
+	private static final String WELCOMING_MESSAGE = "Ol√°! Bem vindo ao groupchat!\nDigite seu username para entrar no chat: ";
 	private static final String USER_JOIN_MESSAGE = "*** %s entrou na conversa ***";
 	private static final String USER_LEAVE_MESSAGE = "*** %s saiu da conversa ***";
 	private static final String SENDING_ERROR_MESSAGE = "*** Erro ao tentar enviar mensagem ***";
@@ -32,7 +32,7 @@ public class ChatClient {
 		try {
 			startInteractiveUI(scanner);
 		} catch (IOException | NotBoundException e) {
-			System.err.println("Ocorreu um erro inesperado e a aplicaÁ„o est· sendo encerrada. Erro: " + e.getMessage());
+			System.err.println("Ocorreu um erro inesperado e a aplica√ß√£o est√° sendo encerrada. Erro: " + e.getMessage());
 			e.printStackTrace();
 		}
 	}
