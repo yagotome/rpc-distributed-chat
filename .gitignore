@@ -4,6 +4,9 @@
 .classpath
 .project
 
+# Build files
+bin/
+
 # Maven files
 target/
 pom.xml.tag
