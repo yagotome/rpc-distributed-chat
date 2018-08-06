@@ -2,6 +2,8 @@
 
 Este projeto implementa um sistema distribuído de chat de grupo com java RMI e sockets.
 
+![Running application](imgs/running.png)
+
 ## Definição do sistema distribuído
 
 O sistema é escalável em uma rede com suporte a multicast. Ele é composto por uma quantidade variada de nós, que pode ser ajustada de acordo com a demanda.
@@ -10,6 +12,10 @@ Cada nó do sistema distribuído tem:
 * Um host rodando RMIREGISTRY
 * Um host (pode ser o mesmo do RMIREGISTRY ou não) rodando o servidor da aplicação (servidor socket multicast, servidor RMI para enviar mensagens e cliente RMI para enviar mensagens recebidas do socket para os seus clientes)
 * Vários hosts rodando cliente (sistema com UI interativa, que se comunica com o servidor)
+
+Abaixo uma imagem represntando a arquitetura de um nó:
+
+![Architecture](imgs/architecture.png)
 
 ## Decisões do projeto
 
