@@ -21,15 +21,22 @@ public class SocketServer {
 			try (MulticastSocket socketClient = new MulticastSocket(config.getSocketPort())) {
 				InetAddress address = InetAddress.getByName(config.getMulticastAddress());
 				socketClient.joinGroup(address);
-				byte[] buffer = new byte[1024];
+				final byte[] buffer = new byte[1024];
 				while (true) {
 					DatagramPacket dgpkt = new DatagramPacket(buffer, buffer.length);
 					socketClient.receive(dgpkt);
 					assert (dgpkt.getData() == buffer);
-					Message message = (Message) SerializationUtils.deserialize(buffer);
-					callback.accept(message);
+					new Thread(() -> {
+						try {
+							Message message = (Message) SerializationUtils.deserialize(buffer);
+							callback.accept(message);
+						} catch (IOException | ClassNotFoundException e) {
+							System.err.println("Error: " + e.getMessage());
+							e.printStackTrace();
+						}
+					}).start();
 				}
-			} catch (IOException | ClassNotFoundException e) {
+			} catch (IOException e) {
 				System.err.println("Error: " + e.getMessage());
 				e.printStackTrace();
 			}
